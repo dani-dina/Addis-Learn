@@ -4,10 +4,12 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import connectDB from './src/configs/db.config';
 
 dotenv.config();
 
 const app : Application =express();
+connectDB();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended : true}));
